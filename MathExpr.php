@@ -16,9 +16,9 @@
 
         public function getParsedExpression(){
             $expr = [];
-            $pattern1 = '/(\-[\d.]+)|([\d.]+)|([\+\-\/\*])/';
+            $pattern = '/(\-[\d.]+)|([\d.]+)|([\+\-\/\*])/'; // regex pattern to extract number, math operators, and parentheses
             preg_match_all(
-                $pattern1,
+                $pattern,
                 $this->getExpression(),
                 $expr  
             );
