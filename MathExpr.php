@@ -16,9 +16,9 @@
 
         public function getParsedExpression(){
             $expr = [];
-
+            $pattern1 = '/(\-[\d.]+)|([\d.]+)|([\+\-\/\*])/';
             preg_match_all(
-                '/[\d\.]+|[+\-\*\/\(\)]/',
+                $pattern1,
                 $this->getExpression(),
                 $expr  
             );
@@ -86,7 +86,7 @@
                 $numbers->push($this->calculate($n1, $n2, $op));
             }
 
-            print_r($numbers->top());
+            return $numbers->isEmpty() ? 0 : $numbers->pop();
         }
     }
 ?>

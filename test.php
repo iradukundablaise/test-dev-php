@@ -4,7 +4,8 @@
 
     $ex1 = "3.5+(3*6+(2*2))";
     $ex2 = "3*2+5";
-    $ex1 = "1--1";
+    $ex3 = "1-(-5)";
     $expr = new MathExpr($ex1);
-    $expr->evaluate();
+    $result = $expr->evaluate();
+    echo $expr->getExpression()." = $result \n";
 ?>
